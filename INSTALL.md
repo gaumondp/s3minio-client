@@ -4,18 +4,69 @@ This guide will walk you through the process of setting up the development envir
 
 ## Prerequisites
 
-Before you begin, ensure you have the following installed on your system:
+Before you begin, you will need to install several tools and dependencies. Please follow the instructions for your operating system.
 
-*   **Bun.js (v1.3.x):** This project uses Bun as its JavaScript runtime and package manager. You can find installation instructions on the [official Bun website](https://bun.sh/).
-*   **Rust:** Tauri is built with Rust. If you don't have it installed, you can get it from the [official Rust website](https://www.rust-lang.org/tools/install).
-*   **A C Compiler:** Required by some of the dependencies.
-*   **`pkg-config`:** Required for building some of the Rust dependencies on Linux.
+---
 
-## Platform-Specific Dependencies
+### macOS
 
-Please follow the instructions for your operating system to install the necessary dependencies for Tauri.
+#### 1. Xcode Command Line Tools
+
+Tauri uses Xcode for development on macOS. If you don't have it installed, open a terminal and run the following command:
+
+```bash
+xcode-select --install
+```
+
+#### 2. Rust
+
+Tauri is built with Rust. Install Rust using `rustup` by running the following command in your terminal:
+
+```bash
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+```
+
+After the installation is complete, close and reopen your terminal to ensure the `rustc` and `cargo` commands are available.
+
+#### 3. Bun.js
+
+This project uses Bun.js as its JavaScript runtime and package manager. You can find installation instructions on the [official Bun website](https://bun.sh/).
+
+---
+
+### Windows
+
+#### 1. Microsoft C++ Build Tools
+
+Tauri requires the Microsoft C++ Build Tools for development on Windows.
+
+1.  Download the **Microsoft C++ Build Tools** installer from the [Visual Studio website](https://visualstudio.microsoft.com/visual-cpp-build-tools/).
+2.  Run the installer and select the **"Desktop development with C++"** workload.
+
+#### 2. WebView2
+
+Tauri uses Microsoft Edge WebView2 to render content on Windows.
+
+*   **Windows 11:** WebView2 is pre-installed.
+*   **Windows 10:** You will need to download and install the **"Evergreen Bootstrapper"** from the [WebView2 Runtime download section](https://developer.microsoft.com/en-us/microsoft-edge/webview2/#download-section).
+
+#### 3. Rust
+
+Tauri is built with Rust. Visit the [official Rust website](https://www.rust-lang.org/tools/install) to download and run the `rustup-init.exe` installer.
+
+When prompted during the installation, ensure that the **MSVC toolchain** is selected as the default. It should be `x86_64-pc-windows-msvc`.
+
+After the installation is complete, close and reopen your terminal or PowerShell to ensure the `rustc` and `cargo` commands are available.
+
+#### 4. Bun.js
+
+This project uses Bun.js as its JavaScript runtime and package manager. You can find installation instructions on the [official Bun website](https://bun.sh/).
+
+---
 
 ### Linux (Debian-based)
+
+#### 1. System Dependencies
 
 You will need to install several development libraries for GTK and WebKit. Open a terminal and run the following command:
 
@@ -29,22 +80,25 @@ sudo apt-get install -y \
   pkg-config
 ```
 
-### macOS
+#### 2. Rust
 
-You will need to install the Xcode command-line tools. Open a terminal and run the following command:
+Tauri is built with Rust. Install Rust using `rustup` by running the following command in your terminal:
 
 ```bash
-xcode-select --install
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 ```
 
-### Windows
+After the installation is complete, close and reopen your terminal to ensure the `rustc` and `cargo` commands are available.
 
-1.  **Microsoft Visual Studio C++ Build Tools:** You can download the build tools from the [Visual Studio website](https://visualstudio.microsoft.com/visual-cpp-build-tools/). When installing, make sure to select the "C++ build tools" workload.
-2.  **WebView2:** Tauri requires the WebView2 runtime on Windows. It is pre-installed on Windows 11. If you are on Windows 10, you can download it from the [official Microsoft website](https://developer.microsoft.com/en-us/microsoft-edge/webview2/).
+#### 3. Bun.js
+
+This project uses Bun.js as its JavaScript runtime and package manager. You can find installation instructions on the [official Bun website](https://bun.sh/).
+
+---
 
 ## Project Setup
 
-Once you have installed all the prerequisites, you can set up the project by following these steps:
+Once you have installed all the prerequisites for your operating system, you can set up the project by following these steps:
 
 1.  **Clone the repository:**
     ```bash
