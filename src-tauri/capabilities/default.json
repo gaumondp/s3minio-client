@@ -10,7 +10,7 @@
         {
           "name": "run-bun-script",
           "cmd": "bun",
-          "args": ["run", "src/test-connection.ts"],
+          "args": ["run", "../src/test-connection.ts"],
           "sidecar": false
         }
       ]
