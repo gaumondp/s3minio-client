@@ -34,8 +34,6 @@
     ]
   },
   "plugins": {
-    "shell": {
-      "scope": ["bun run src/test-connection.ts"]
-    }
+    "shell": {}
   }
 }
