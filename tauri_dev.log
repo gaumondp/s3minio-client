@@ -1,0 +1,18 @@
+$ tauri dev
+     Running BeforeDevCommand (`bun run dev`)
+$ vite
+
+  VITE v6.4.1  ready in 248 ms
+
+  ➜  Local:   http://localhost:1420/
+     Running DevCommand (`cargo  run --no-default-features --color always --`)
+        Info Watching /app/s3minio-client/src-tauri for changes...
+[1m[92m   Compiling[0m s3minio-client v0.1.0 (/app/s3minio-client/src-tauri)
+[1m[96m    Building[0m [=======================> ] 520/522: s3minio-client              [1m[96m    Building[0m [=======================> ] 521/522: s3minio-client(bin)         [K[1m[92m    Finished[0m `dev` profile [unoptimized + debuginfo] target(s) in 7.15s
+[1m[92m     Running[0m `target/debug/s3minio-client`
+
+thread 'main' (28708) panicked at /home/jules/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tao-0.34.5/src/platform_impl/linux/event_loop.rs:218:53:
+Failed to initialize gtk backend!: BoolError { message: "Failed to initialize GTK", filename: "/home/jules/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/gtk-0.18.2/src/rt.rs", function: "gtk::rt::init", line: 141 }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+error: script "tauri" exited with code 101
+error: script "dev" exited with code 143
