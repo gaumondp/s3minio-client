@@ -1,15 +1,6 @@
 import { s3Client } from "./s3";
 import { logger } from "./logger";
-
-/**
- * Defines the structure of an S3 object as returned by the list method.
- */
-interface S3Object {
-  key: string;
-  size?: number;
-  lastModified?: string;
-  eTag?: string;
-}
+import type { S3ListObjectsResponse } from "bun";
 
 /**
  * Tests the connection to the S3 bucket by listing its objects.
@@ -26,7 +17,7 @@ async function testS3Connection() {
         logger.info(`Found ${result.contents.length} objects in the bucket.`);
         // To provide more detailed feedback, let's log the first few object keys
         if (result.contents.length > 0) {
-          const keys = result.contents.slice(0, 5).map((o: S3Object) => o.key);
+          const keys = result.contents.slice(0, 5).map((o: NonNullable<S3ListObjectsResponse["contents"]>[number]) => o.key);
           logger.info(`First few object keys: ${keys.join(", ")}`);
         }
     } else {
